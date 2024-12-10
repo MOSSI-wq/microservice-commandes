@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: global-config
+logging:
+  level:
+    root: INFO
