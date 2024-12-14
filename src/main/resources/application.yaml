@@ -1,14 +1,28 @@
 spring:
   application:
-    name: microservice-commandes
+    name: microservice-commandes # Nom du service
   cloud:
     config:
-      discovery:
-        enabled: false
+      uri: http://localhost:8882 # URL du serveur Config
+      enabled: true # Activer la connexion au serveur Config
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb # URL de la base de données H2 en mémoire
     driver-class-name: org.h2.Driver
     username: sa
     password: 12345678
   server:
-    port: 8081
+    port: 8081 # Port sur lequel le service écout
+  config:
+      import: configserver:https://github.com/MOSSI-wq/microservice-commandes
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # Exposer tous les endpoints d'Actuator
+  endpoint:
+    refresh:
+      enabled: true # Activer le rafraîchissement de la configuration
+  health:
+    refresh:
+      enabled: true # Activer le rafraîchissement pour la santé des services

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,6 +14,7 @@ import java.util.Optional;
 public class CommandeServiceImpl implements CommandeService { // Implement the interface
     @Autowired
     private CommandeRepository commandeRepository;
+    private int commandesLast;
 
     @Override
     public List<Commande> getAllCommandes() {
@@ -46,5 +48,10 @@ public class CommandeServiceImpl implements CommandeService { // Implement the i
         } else {
             throw new RuntimeException("Commande non trouvée");
         }
+    }
+    @Override
+    public List<Commande> getCommandeRecues(){
+    LocalDate dateLimit = LocalDate.now().minusDays(commandesLast);
+    return commandeRepository.findByDateAfter(dateLimit);
     }
 }

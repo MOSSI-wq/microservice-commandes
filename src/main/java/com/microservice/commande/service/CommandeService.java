@@ -11,4 +11,5 @@ public interface CommandeService {
     Commande createCommande(Commande commande);
     Commande updateCommande(Long id, Commande commande);
     void deleteCommande(Long id);
+    List<Commande> getCommandeRecues();
 }

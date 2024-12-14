@@ -52,4 +52,9 @@ public class CommandeController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    @GetMapping("/recents")
+    public ResponseEntity<Commande> getCommandeRecues(){
+        List<Commande> commandes = commandeService.getCommandeRecues();
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
