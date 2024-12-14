@@ -3,12 +3,12 @@ spring:
     name: microservice-commandes
   cloud:
     config:
-      import: configserver:http://localhost:8888  # Adresse de votre Config Server
-      fail-fast: true
+      discovery:
+        enabled: false
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
     username: sa
-    password: password  # Ajoutez le mot de passe ici
+    password: 12345678
   server:
     port: 8081
