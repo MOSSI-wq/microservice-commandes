@@ -3,6 +3,7 @@ import com.microservice.commande.entity.Commande;
 import com.microservice.commande.repository.CommandeRepository;
 import com.microservice.commande.service.CommandeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
@@ -14,10 +15,12 @@ import java.util.Optional;
 public class CommandeServiceImpl implements CommandeService { // Implement the interface
     @Autowired
     private CommandeRepository commandeRepository;
+
+    @Value("{mes-config-ms.commandes-last:10}")
     private int commandesLast;
 
     @Override
-    public List<Commande> getAllCommandes() {
+    public List<Commande> getAllCommandes()  {
         return commandeRepository.findAll();
     }
 

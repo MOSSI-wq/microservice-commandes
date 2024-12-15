@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       uri: http://localhost:8882 # URL du serveur Config
-      enabled: true # Activer la connexion au serveur Config
+      fail-fast: true
   datasource:
     url: jdbc:h2:mem:testdb # URL de la base de données H2 en mémoire
     driver-class-name: org.h2.Driver
@@ -22,7 +22,7 @@ management:
         include: "*" # Exposer tous les endpoints d'Actuator
   endpoint:
     refresh:
-      enabled: true # Activer le rafraîchissement de la configuration
+      access: read_only
   health:
     refresh:
       enabled: true # Activer le rafraîchissement pour la santé des services

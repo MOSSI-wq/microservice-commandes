@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: microservice-commandes # Nom de votre application
+  cloud:
+    config:
+      uri: http://localhost:8882 # Adresse de votre Config Server
+      fail-fast: true # Arrête l'application si la connexion échoue
