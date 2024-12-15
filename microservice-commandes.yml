@@ -1,20 +1,5 @@
-server:
-  port: 8081
-
-spring:
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: 12345678
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-logging:
-  level:
-    com.microservice.commande: DEBUG
-
 mes-config-ms:
   commandes-last: 10
+spring:
+  application:
+    name: microservice-commandes
