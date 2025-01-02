@@ -4,4 +4,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8882 # Adresse de votre Config Server
-      fail-fast: true # Arrête l'application si la connexion échoue
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
