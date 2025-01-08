@@ -1,5 +1,3 @@
 mes-config-ms:
   commandes-last: 10
-spring:
-  application:
-    name: microservice-commandes
+
