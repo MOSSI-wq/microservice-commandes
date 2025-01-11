@@ -17,4 +17,4 @@ spring:
 
 
 mes-config-ms:
-  commandes-last: 20
+  commandes-last: 10
