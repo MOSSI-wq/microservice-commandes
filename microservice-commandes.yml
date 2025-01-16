@@ -10,7 +10,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 9000
+  port: 8000
 
 
 mes-config-ms:
