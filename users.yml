@@ -1,13 +1,19 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/commandedb?useSSL=false&serverTimezone=UTC 
+    url: jdbc:mysql://localhost:3306/commandedb?useSSL=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password:       
+    password: 
+
   jpa:
     hibernate:
-      ddl-auto: create-drop  
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
 server:
   port: 7000
+
